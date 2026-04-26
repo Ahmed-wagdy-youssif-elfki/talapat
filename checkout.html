@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إتمام الطلب | مطعم فليمز</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body { padding-top: 100px; }
+
+        .checkout-layout {
+            display: flex;
+            gap: 40px;
+            align-items: flex-start;
+            margin-bottom: 80px;
+            margin-top: 50px;
+        }
+
+        .checkout-form {
+            flex: 1;
+        }
+
+        .form-section {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 40px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border);
+            margin-bottom: 30px;
+        }
+
+        .form-section h3 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border-bottom: 1px solid var(--border);
+            padding-bottom: 20px;
+        }
+
+        .form-section h3 i { color: var(--primary); }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .form-group.full { grid-column: 1 / -1; }
+
+        .form-label {
+            font-weight: 700;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .form-control {
+            padding: 18px 25px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: #fff;
+            font-family: inherit;
+            font-size: 1.1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .form-control:focus {
+            border-color: var(--primary);
+            background: rgba(255, 77, 41, 0.05);
+            box-shadow: 0 0 15px rgba(255, 77, 41, 0.1);
+        }
+
+        .form-control::placeholder {
+            color: rgba(255,255,255,0.2);
+        }
+
+        .payment-card {
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.03);
+            border-radius: var(--radius-sm);
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 25px;
+            cursor: pointer;
+            transition: var(--transition);
+            margin-bottom: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .payment-card:hover {
+            border-color: rgba(255, 77, 41, 0.5);
+            background: rgba(255, 77, 41, 0.05);
+        }
+
+        .payment-card input[type="radio"] { 
+            appearance: none;
+            width: 24px;
+            height: 24px;
+            border: 2px solid var(--border);
+            border-radius: 50%;
+            display: grid;
+            place-content: center;
+            transition: var(--transition);
+        }
+
+        .payment-card input[type="radio"]::before {
+            content: "";
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            transform: scale(0);
+            transition: 120ms transform ease-in-out;
+            box-shadow: inset 1em 1em var(--primary);
+        }
+
+        .payment-card input[type="radio"]:checked {
+            border-color: var(--primary);
+        }
+        
+        .payment-card input[type="radio"]:checked::before {
+            transform: scale(1);
+        }
+
+        .payment-card input[type="radio"]:checked ~ .payment-details {
+            color: #fff;
+        }
+
+        .payment-details { flex: 1; color: var(--text-muted); transition: var(--transition); }
+        .payment-details h4 { font-size: 1.2rem; font-weight: 800; margin-bottom: 5px; color: #fff; }
+        .payment-details p { font-size: 0.95rem; }
+        .payment-icon { font-size: 2.5rem; color: rgba(255,255,255,0.1); }
+
+        .payment-card input[type="radio"]:checked ~ .payment-icon {
+            color: var(--primary);
+            text-shadow: 0 0 20px rgba(255, 77, 41, 0.4);
+        }
+
+        /* Cart Summary Sync */
+        .cart-summary {
+            width: 380px;
+            background: var(--bg-card);
+            padding: 40px;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border);
+            position: sticky;
+            top: 100px;
+        }
+        .summary-total {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-top: 30px;
+            border-top: 2px dashed rgba(255, 77, 41, 0.3);
+            font-size: 1.6rem;
+            font-weight: 900;
+        }
+
+        @media (max-width: 992px) {
+            .checkout-layout { flex-direction: column; }
+            .cart-summary { width: 100%; position: static; }
+            .form-row { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="brand"><i class="fa-solid fa-fire"></i> فليمز</a>
+            <div class="header-actions">
+                <a href="cart.html" class="btn btn-outline" style="padding: 10px 20px; font-size: 0.95rem;">العودة للسلة <i class="fa-solid fa-arrow-left"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <h1 class="anim-fade" style="font-size: 3rem; font-weight: 900; margin-top:40px; text-shadow: var(--shadow-glow);">إتمام الطلب الفندقي</h1>
+
+        <div class="checkout-layout">
+            <form class="checkout-form anim-fade delay-1" onsubmit="event.preventDefault(); window.clearCart(); alert('تم استلام طلبك بنجاح! سيتم تحويلك للرئيسية'); window.location='index.html';">
+                
+                <div class="form-section">
+                    <h3><i class="fa-solid fa-map-location-dot"></i> تفاصيل التوصيل</h3>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">الاسم بالكامل</label>
+                            <input type="text" class="form-control" placeholder="ادخل اسمك الثنائي" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">رقم الهاتف النشط</label>
+                            <input type="tel" class="form-control" placeholder="01X XXX XXXX" required>
+                        </div>
+                        <div class="form-group full">
+                            <label class="form-label">عنوان التوصيل المصل</label>
+                            <input type="text" class="form-control" placeholder="رقم العمارة، الشارع، علامة مميزة" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3><i class="fa-solid fa-credit-card"></i> طريقة الدفع</h3>
+                    
+                    <label class="payment-card">
+                        <input type="radio" name="payment" checked>
+                        <div class="payment-details">
+                            <h4>دفع وقت الاستلام</h4>
+                            <p>قم بالدفع النقدي لمندوبنا عند وصول وجبتك الساخنة.</p>
+                        </div>
+                        <i class="fa-solid fa-money-bill-wave payment-icon"></i>
+                    </label>
+
+                    <label class="payment-card">
+                        <input type="radio" name="payment">
+                        <div class="payment-details">
+                            <h4>بطاقة الزائر (Online)</h4>
+                            <p>ادفع بضغطة زر وتجنب تحضير القطع النقدية.</p>
+                        </div>
+                        <i class="fa-brands fa-cc-visa payment-icon"></i>
+                    </label>
+                </div>
+
+            </form>
+
+            <!-- Syncs with JS below -->
+            <div class="cart-summary anim-fade delay-2">
+                <h3 style="font-size: 1.6rem; font-weight: 800; border-bottom:1px solid var(--border); padding-bottom:15px; margin-bottom:20px;">الفاتورة المبدئية</h3>
+                <div style="display:flex; justify-content:space-between; margin-bottom:15px; color:var(--text-muted); font-size:1.1rem;">
+                    <span>مجموع الأطباق</span>
+                    <span id="checkout-subtotal">...</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; margin-bottom:15px; color:var(--text-muted); font-size:1.1rem;">
+                    <span>رسوم التوصيل المبرد</span>
+                    <span>25 ج.م</span>
+                </div>
+                <div class="summary-total">
+                    <span>الإجمالي</span>
+                    <span class="text-primary" id="checkout-total">...</span>
+                </div>
+                <button type="button" onclick="document.querySelector('.checkout-form').requestSubmit();" class="btn btn-primary" style="width: 100%; margin-top: 40px; font-size: 1.25rem;">تأكيد الدفع والطلب <i class="fa-solid fa-bolt"></i></button>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/js/main.js"></script>
+    <script>
+        // Additional inline logic to pull from cart on checkout page specifically
+        document.addEventListener('DOMContentLoaded', () => {
+            const cart = JSON.parse(localStorage.getItem('flames_cart')) || [];
+            let subtotal = 0;
+            cart.forEach(item => subtotal += (item.quantity * item.price));
+            document.getElementById('checkout-subtotal').innerText = subtotal + ' ج.م';
+            if(subtotal === 0) {
+                alert('سلتك فارغة!'); window.location='menu.html';
+            } else {
+                document.getElementById('checkout-total').innerText = (subtotal + 25) + ' ج.م';
+            }
+        });
+    </script>
+</body>
+</html>

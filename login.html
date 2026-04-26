@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول | مطعم فليمز الفاخر</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        body { padding: 0; min-height: 100vh; display: flex; }
+
+        .auth-split {
+            display: flex;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        .auth-image {
+            flex: 1;
+            background: url('https://images.unsplash.com/photo-1544025162-811c75c88c7f?ixlib=rb-4.0.3&w=1200&q=80') center/cover no-repeat;
+            position: relative;
+            display: flex;
+            align-items: flex-end;
+            padding: 60px;
+        }
+
+        .auth-image::after {
+            content: '';
+            position: absolute;
+            top:0; left:0; right:0; bottom:0;
+            background: linear-gradient(0deg, rgba(15, 17, 21, 0.9) 0%, rgba(15, 17, 21, 0.2) 100%);
+            z-index: 1;
+        }
+
+        .auth-hero-text {
+            position: relative;
+            z-index: 2;
+        }
+
+        .auth-hero-text h2 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #fff;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+
+        .auth-panel {
+            width: 600px;
+            background: var(--bg-dark);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .auth-container {
+            width: 100%;
+            max-width: 450px;
+            padding: 0 40px;
+        }
+
+        .auth-brand {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 50px;
+            text-shadow: var(--shadow-glow);
+        }
+
+        .auth-brand i { color: var(--primary); }
+
+        .auth-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+
+        .auth-subtitle {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            margin-bottom: 40px;
+        }
+
+        .auth-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .auth-input {
+            width: 100%;
+            padding: 20px 25px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            color: #fff;
+            font-family: inherit;
+            font-size: 1.1rem;
+            outline: none;
+            transition: var(--transition);
+        }
+
+        .auth-input:focus {
+            border-color: var(--primary);
+            background: rgba(255, 77, 41, 0.05);
+            box-shadow: 0 0 15px rgba(255, 77, 41, 0.1);
+        }
+
+        .auth-extra {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        .auth-extra a {
+            color: var(--primary);
+            transition: var(--transition);
+        }
+        .auth-extra a:hover {
+            text-shadow: 0 0 10px rgba(255, 77, 41, 0.5);
+        }
+
+        .social-login {
+            margin-top: 40px;
+            text-align: center;
+        }
+
+        .social-login p {
+            color: var(--text-muted);
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .social-login p::before, .social-login p::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 30%;
+            height: 1px;
+            background: var(--border);
+        }
+        .social-login p::before { right: 0; }
+        .social-login p::after { left: 0; }
+
+        .social-btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            width: 100%;
+            padding: 18px;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,0.03);
+            color: #fff;
+            font-family: inherit;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .social-btn:hover {
+            background: #fff;
+            color: #0a0a0a;
+        }
+
+        .back-home {
+            position: absolute;
+            top: 40px;
+            right: 40px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--text-muted);
+            font-weight: 700;
+            transition: var(--transition);
+        }
+        .back-home:hover { color: #fff; }
+
+        @media (max-width: 992px) {
+            .auth-image { display: none; }
+            .auth-panel { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="auth-split">
+        <div class="auth-image anim-fade">
+            <div class="auth-hero-text">
+                <h2>تذوق <br><span class="text-gradient">الرفاهية</span>.</h2>
+                <p style="font-size: 1.4rem; color: #ccc; max-width: 500px;">آلاف العملاء يثقون في جودة لحومنا الفاخرة المحضرة محلياً كل يوم.</p>
+            </div>
+        </div>
+
+        <div class="auth-panel anim-fade delay-1">
+            <a href="index.html" class="back-home"><i class="fa-solid fa-arrow-right"></i> العودة للرئيسية</a>
+
+            <div class="auth-container">
+                <a href="index.html" class="auth-brand"><i class="fa-solid fa-fire"></i> فليمز</a>
+                
+                <h1 class="auth-title">تسجيل الدخول</h1>
+                <p class="auth-subtitle">أهلاً بك مجدداً! ادخل تفاصيل حسابك للمتابعة.</p>
+
+                <form class="auth-form" action="index.html">
+                    <input type="email" class="auth-input" placeholder="البريد الإلكتروني" required>
+                    <input type="password" class="auth-input" placeholder="كلمة المرور" required>
+                    
+                    <div class="auth-extra">
+                        <label style="display:flex; align-items:center; gap:10px; cursor:pointer;">
+                            <input type="checkbox" style="accent-color: var(--primary); transform: scale(1.2);">
+                            تذكرني
+                        </label>
+                        <a href="#">نسيت كلمة المرور؟</a>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.25rem;">دخول آمن <i class="fa-solid fa-lock"></i></button>
+                    
+                    <div style="text-align:center; color: var(--text-muted); font-size: 1.05rem;">
+                        مستخدم جديد؟ <a href="register.html" style="color:#fff; font-weight:800; border-bottom:1px solid var(--primary);">أنشئ حسابك الفاخر</a>
+                    </div>
+                </form>
+
+                <div class="social-login">
+                    <p>أو استخدم</p>
+                    <button class="social-btn"><img src="https://cdn-icons-png.flaticon.com/512/2991/2991148.png" style="width:24px;"> الدخول بواسطة جوجل</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Include main.js for animations to fire -->
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

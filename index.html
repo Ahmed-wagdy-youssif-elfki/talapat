@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم فليمز | الفخامة في كل قضمة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="brand">
+                <i class="fa-solid fa-fire"></i> فليمز
+            </a>
+            
+            <nav class="nav">
+                <a href="index.html" class="active">الرئيسية</a>
+                <a href="menu.html">القائمة المميزة</a>
+                <a href="about.html">قصتنا</a>
+                <a href="#reviews">تقييمات</a>
+            </nav>
+
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline" style="padding: 10px 24px; font-size: 0.95rem;">دخول</a>
+                <a href="cart.html" class="cart-btn" title="سلة المشتريات">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Bottom Navigation (Visible only on mobile) -->
+    <nav class="mobile-nav">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-nav-item active"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
+            <li><a href="menu.html" class="mobile-nav-item"><i class="fa-solid fa-utensils"></i> المنيو</a></li>
+            <li><a href="cart.html" class="mobile-nav-item"><i class="fa-solid fa-basket-shopping"></i> السلة</a></li>
+            <li><a href="login.html" class="mobile-nav-item"><i class="fa-solid fa-user"></i> حسابي</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content anim-fade">
+                <div class="hero-tag"><i class="fa-solid fa-star"></i> تجربة طعام استثنائية</div>
+                <h1 class="text-gradient">الذوق الرفيع، <br>مباشرة إليك.</h1>
+                <p>نحن لا نصنع مجرد طعام، بل نصنع لوحات فنية تذوب في الفم. اكتشف قائمة فليمز الفاخرة المحضرة بأجود أنواع اللحوم الطازجة والبهارات العالمية.</p>
+                <div style="display: flex; gap: 20px; flex-wrap: wrap;">
+                    <a href="menu.html" class="btn btn-primary">اطلب الآن <i class="fa-solid fa-arrow-left"></i></a>
+                </div>
+            </div>
+            <div class="hero-image anim-fade delay-2">
+                <img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&w=800&q=80" alt="Premium Burger">
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Why Choose Us Items -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header text-center anim-fade" style="text-align: center;">
+                <div class="section-subtitle">لماذا نحن؟</div>
+                <h2 class="section-title">مميزات تجعلنا الخيار الأول</h2>
+            </div>
+            <div class="grid-3 anim-fade delay-1">
+                <div class="feature-card">
+                    <i class="fa-solid fa-leaf"></i>
+                    <h3>مزارع محلية</h3>
+                    <p style="color:var(--text-muted);">جميع خضرواتنا ولحومنا نأتي بها يومياً من مزارع معتمدة وموثوقة.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-fire-burner"></i>
+                    <h3>الشوي على الحطب</h3>
+                    <p style="color:var(--text-muted);">نكهة التدخين المميزة التي لا يمكن مقاومتها في كل قضمة.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-motorcycle"></i>
+                    <h3>توصيل مبرمَج</h3>
+                    <p style="color:var(--text-muted);">تصلك وجبتك ساخنة في سيارات ودراجات حافظة للحرارة.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Menu Items -->
+    <section class="section" id="menu" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-header anim-fade">
+                <div class="section-subtitle">حصري وخاص</div>
+                <h2 class="section-title">الأعلى مبيعاً</h2>
+            </div>
+            
+            <div class="menu-grid">
+                <!-- Item 1 -->
+                <div class="food-card anim-fade delay-1" data-id="item-1">
+                    <div class="food-img-container"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&w=400&q=80" alt="Burger"></div>
+                    <h3 class="food-title">ميجاسموكي بلاك</h3>
+                    <p class="food-desc">شريحة أنجوس، ترافل مايونيز، خبز بريوش حصري.</p>
+                    <div class="food-footer">
+                        <div class="food-price">220 <span>ج.م</span></div>
+                        <button class="add-btn" title="أضف للسلة"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Item 2 -->
+                <div class="food-card anim-fade delay-2" data-id="item-2">
+                    <div class="food-img-container"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-4.0.3&w=400&q=80" alt="Pizza"></div>
+                    <h3 class="food-title">ترافل بيتزا</h3>
+                    <p class="food-desc">عجينة نابولي، صوص الكمأة، موتزاريلا دي بوفالا.</p>
+                    <div class="food-footer">
+                        <div class="food-price">285 <span>ج.م</span></div>
+                        <button class="add-btn" title="أضف للسلة"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+
+                <!-- Item 3 -->
+                <div class="food-card anim-fade delay-3" data-id="item-3">
+                    <div class="food-img-container"><img src="https://images.unsplash.com/photo-1555072956-7758afb20e8f?ixlib=rb-4.0.3&w=400&q=80" alt="Drink"></div>
+                    <h3 class="food-title">بلاك بيري موهيتو</h3>
+                    <p class="food-desc">توت أسود طازج، نعناع، وصودا منعشة.</p>
+                    <div class="food-footer">
+                        <div class="food-price">85 <span>ج.م</span></div>
+                        <button class="add-btn" title="أضف للسلة"><i class="fa-solid fa-plus"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 60px;">
+                <a href="menu.html" class="btn btn-outline" style="padding: 15px 40px;">استكشف القائمة الكاملة</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: Testimonials -->
+    <section class="section" id="reviews" style="background: rgba(255,255,255,0.02); border-block: 1px solid var(--border);">
+        <div class="container">
+            <div class="section-header text-center anim-fade" style="text-align: center;">
+                <div class="section-subtitle">آراء العملاء</div>
+                <h2 class="section-title">ماذا يقول عشاق فليمز؟</h2>
+            </div>
+
+            <div class="grid-3 anim-fade delay-1">
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-right"></i>
+                    <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"أفضل برجر تناولته في حياتي! اللحم يذوب في الفم حرفياً، وخبز البريوش طازج وممتاز. التوصيل كان في 20 دقيقة فقط."</p>
+                    <div class="customer-info">
+                        <img src="https://ui-avatars.com/api/?name=Ahmed+K&background=ff4d29&color=fff" alt="User">
+                        <div><strong style="color:#fff;">أحمد كمال</strong><br><span style="font-size:0.85rem; color:var(--text-muted);">عميل VIP</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-right"></i>
+                    <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i></div>
+                    <p>"بيتزا الترافل لديهم تنافس مطاعم إيطاليا! العجينة خفيفة جداً، المكونات فاخرة، والتجربة بشكل عام تستحق كل جنيه."</p>
+                    <div class="customer-info">
+                        <img src="https://ui-avatars.com/api/?name=Sara+M&background=181b21&color=fff" alt="User">
+                        <div><strong style="color:#fff;">سارة مجدي</strong><br><span style="font-size:0.85rem; color:var(--text-muted);">طلبية أولى</span></div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <i class="fa-solid fa-quote-right"></i>
+                    <div class="rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                    <p>"تطبيق ممتاز وتجربة مستخدم رهيبة ومريحة. والموهيتو لديهم منعش للغاية. هذا أصبح مطعمي المفضل للإجازات الأسبوعية!"</p>
+                    <div class="customer-info">
+                        <img src="https://ui-avatars.com/api/?name=Omar+F&background=ff4d29&color=fff" alt="User">
+                        <div><strong style="color:#fff;">عمر فهمي</strong><br><span style="font-size:0.85rem; color:var(--text-muted);">عميل أسبوعي</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Offer -->
+    <section class="section">
+        <div class="container">
+            <div class="premium-banner anim-fade">
+                <div class="banner-content">
+                    <h2 class="text-gradient">تجربة الـ VIP</h2>
+                    <p>اطلب وجبة الـ VIP لعائلتك واستمتع بخصم 20٪ على إجمالي الطلب، بالإضافة لتوصيل مجاني في سياراتنا المبردة.</p>
+                    <a href="menu.html" class="btn btn-primary" style="background:#fff; color:#0a0a0a;">أضف العرض للسلة</a>
+                </div>
+                <img src="https://images.unsplash.com/photo-1590947132387-155cc3dd2613?ixlib=rb-4.0.3&w=600&q=80" alt="Special Offer" class="banner-img">
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Footer -->
+    <footer style="background: rgba(255,255,255,0.02); padding: 80px 0 40px; border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="grid-3" style="margin-bottom: 50px; text-align: right;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.8rem; font-weight:900; margin-bottom:20px;"><i class="fa-solid fa-fire text-primary"></i> فليمز</h3>
+                    <p style="color:var(--text-muted); margin-bottom:20px;">نأخذك في رحلة تذوق لأشهى الوجبات المحضرة محلياً بعناية وشغف. الرفاهية في كل قضمة.</p>
+                    <div style="display:flex; gap:15px;">
+                        <a href="#" style="background:rgba(255,255,255,0.05); width:40px; height:40px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:0.3s;"><i class="fa-brands fa-instagram text-primary"></i></a>
+                        <a href="#" style="background:rgba(255,255,255,0.05); width:40px; height:40px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:0.3s;"><i class="fa-brands fa-twitter text-primary"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color:#fff; font-size:1.2rem; font-weight:800; margin-bottom:20px;">الوصول السريع</h3>
+                    <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; color:var(--text-muted);">
+                        <li><a href="menu.html">القائمة الكاملة</a></li>
+                        <li><a href="cart.html">سلة المشتريات</a></li>
+                        <li><a href="login.html">حسابي</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color:#fff; font-size:1.2rem; font-weight:800; margin-bottom:20px;">ساعات العمل والاتصال</h3>
+                    <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; color:var(--text-muted);">
+                        <li><i class="fa-solid fa-clock text-primary"></i> 11:00 صباحاً - 2:00 بعد منتصف الليل</li>
+                        <li><i class="fa-solid fa-phone text-primary"></i> 19000 (الخط الساخن)</li>
+                        <li><i class="fa-solid fa-envelope text-primary"></i> hello@flames.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; color: var(--text-muted); font-size: 0.9rem; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);">
+                <p>&copy; 2026 مطعم فليمز الفاخر. تصميم وبرمجة بأعلى المعايير.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

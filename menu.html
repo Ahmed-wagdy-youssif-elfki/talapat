@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم فليمز | القائمة المميزة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .menu-header {
+            padding: 160px 0 80px; text-align: center;
+            background: radial-gradient(circle at bottom, rgba(255, 77, 41, 0.1), transparent 60%);
+        }
+        .page-title { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; }
+        @media (max-width: 768px) { .menu-header { padding: 120px 0 50px; } .page-title { font-size: 2.5rem; } }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="brand"><i class="fa-solid fa-fire"></i> فليمز</a>
+            <nav class="nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="menu.html" class="active">القائمة المميزة</a>
+                <a href="index.html#about">قصتنا</a>
+            </nav>
+            <div class="header-actions">
+                <a href="cart.html" class="cart-btn" title="سلة المشتريات"><i class="fa-solid fa-basket-shopping"></i><span class="cart-badge">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-nav-item"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
+            <li><a href="menu.html" class="mobile-nav-item active"><i class="fa-solid fa-utensils"></i> المنيو</a></li>
+            <li><a href="cart.html" class="mobile-nav-item"><i class="fa-solid fa-basket-shopping"></i> السلة</a></li>
+            <li><a href="login.html" class="mobile-nav-item"><i class="fa-solid fa-user"></i> حسابي</a></li>
+        </ul>
+    </nav>
+
+    <div class="menu-header">
+        <div class="container anim-fade">
+            <div class="hero-tag"><i class="fa-solid fa-crown"></i> منتقاة بعناية</div>
+            <h1 class="page-title text-gradient">القائمة الكاملة</h1>
+            <p style="color: var(--text-muted); font-size:1.2rem;">اختر ما يحلو لك من أطباقنا الفاخرة.</p>
+        </div>
+    </div>
+
+    <section class="section" style="padding-top:0;">
+        <div class="container">
+            
+            <div style="margin-bottom: 80px;" class="anim-fade delay-1">
+                <h2 class="section-title" style="font-size: 2rem; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 15px;"><i class="fa-solid fa-burger text-primary"></i> برجر سيجنتشر</h2>
+                <div class="menu-grid">
+                    <div class="food-card" data-id="item-1">
+                        <div class="food-img-container"><img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?ixlib=rb-4.0.3&w=400&q=80" alt="Burger"></div>
+                        <h3 class="food-title">ميجاسموكي بلاك</h3>
+                        <p class="food-desc">شريحة أنجوس 200 جرام، ترافل مايونيز، خبز البريوش الأسود الفاخر، جبن سويسري.</p>
+                        <div class="food-footer"><div class="food-price">220 <span>ج.م</span></div><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                    <div class="food-card" data-id="item-4">
+                        <div class="food-img-container"><img src="https://images.unsplash.com/photo-1550547660-d9450f859349?ixlib=rb-4.0.3&w=400&q=80" alt="Burger"></div>
+                        <h3 class="food-title">كلاسيك جولد</h3>
+                        <p class="food-desc">شريحة لحم واغيو، بصل مكرمل ببطء، جبن شيدر معتق، صوص الـ فليمز.</p>
+                        <div class="food-footer"><div class="food-price">250 <span>ج.م</span></div><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-bottom: 80px;" class="anim-fade delay-2">
+                <h2 class="section-title" style="font-size: 2rem; margin-bottom: 40px; border-bottom: 1px solid var(--border); padding-bottom: 15px;"><i class="fa-solid fa-pizza-slice text-primary"></i> بيتزا نابولي</h2>
+                <div class="menu-grid">
+                    <div class="food-card" data-id="item-2">
+                        <div class="food-img-container"><img src="https://images.unsplash.com/photo-1628840042765-356cda07504e?ixlib=rb-4.0.3&w=400&q=80" alt="Pizza"></div>
+                        <h3 class="food-title">ترافل بيتزا</h3>
+                        <p class="food-desc">عجينة نابولي أصلية، صوص الكمأة، موتزاريلا دي بوفالا.</p>
+                        <div class="food-footer"><div class="food-price">285 <span>ج.م</span></div><button class="add-btn"><i class="fa-solid fa-plus"></i></button></div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Detailed Footer -->
+    <footer style="background: rgba(255,255,255,0.02); padding: 80px 0 40px; border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="grid-3" style="margin-bottom: 50px; text-align: right;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.8rem; font-weight:900; margin-bottom:20px;"><i class="fa-solid fa-fire text-primary"></i> فليمز</h3>
+                    <p style="color:var(--text-muted); margin-bottom:20px;">نأخذك في رحلة تذوق لأشهى الوجبات المحضرة محلياً بعناية وشغف. الرفاهية في كل قضمة.</p>
+                    <div style="display:flex; gap:15px;">
+                        <a href="#" style="background:rgba(255,255,255,0.05); width:40px; height:40px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:0.3s;"><i class="fa-brands fa-instagram text-primary"></i></a>
+                        <a href="#" style="background:rgba(255,255,255,0.05); width:40px; height:40px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:0.3s;"><i class="fa-brands fa-twitter text-primary"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color:#fff; font-size:1.2rem; font-weight:800; margin-bottom:20px;">الوصول السريع</h3>
+                    <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; color:var(--text-muted);">
+                        <li><a href="menu.html">القائمة الكاملة</a></li>
+                        <li><a href="cart.html">سلة المشتريات</a></li>
+                        <li><a href="login.html">حسابي</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color:#fff; font-size:1.2rem; font-weight:800; margin-bottom:20px;">ساعات العمل والاتصال</h3>
+                    <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; color:var(--text-muted);">
+                        <li><i class="fa-solid fa-clock text-primary"></i> 11:00 صباحاً - 2:00 بعد منتصف الليل</li>
+                        <li><i class="fa-solid fa-phone text-primary"></i> 19000 (الخط الساخن)</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; color: var(--text-muted); font-size: 0.9rem; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);">
+                <p>&copy; 2026 مطعم فليمز الفاخر. تصميم وبرمجة بأعلى المعايير.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>

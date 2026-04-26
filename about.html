@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>قصتنا - مطعم فليمز | الفخامة في كل قضمة</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        .about-header {
+            padding: 160px 0 80px; text-align: center;
+            background: linear-gradient(180deg, rgba(255, 77, 41, 0.05) 0%, transparent 100%);
+        }
+        .about-title { font-size: 3.5rem; font-weight: 900; margin-bottom: 20px; color: #fff; }
+        
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            width: 2px;
+            background: var(--border);
+            transform: translateX(-50%);
+        }
+        .timeline-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+        .timeline-item:nth-child(even) { flex-direction: row-reverse; }
+        .timeline-content {
+            width: 45%;
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            box-shadow: var(--shadow-soft);
+        }
+        .timeline-content h3 { color: var(--primary); font-size: 1.5rem; font-weight: 800; margin-bottom: 10px; }
+        .timeline-content p { color: var(--text-muted); font-size: 1.05rem; }
+        .timeline-dot {
+            width: 20px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 15px var(--primary-glow);
+        }
+        
+        .chef-section {
+            background: rgba(255,255,255,0.02);
+            padding: 80px 0;
+            border-block: 1px solid var(--border);
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .about-title { font-size: 2.5rem; }
+            .timeline::before { left: 20px; }
+            .timeline-item { flex-direction: column; align-items: flex-start; justify-content: flex-start; gap: 20px; padding-right: 40px; }
+            .timeline-item:nth-child(even) { flex-direction: column; }
+            .timeline-content { width: 100%; }
+            .timeline-dot { left: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="brand"><i class="fa-solid fa-fire"></i> فليمز</a>
+            <nav class="nav">
+                <a href="index.html">الرئيسية</a>
+                <a href="menu.html">القائمة المميزة</a>
+                <a href="about.html" class="active">قصتنا</a>
+                <a href="index.html#reviews">تقييمات</a>
+            </nav>
+            <div class="header-actions">
+                <a href="login.html" class="btn btn-outline" style="padding: 10px 24px; font-size: 0.95rem;">دخول</a>
+                <a href="cart.html" class="cart-btn" title="سلة المشتريات"><i class="fa-solid fa-basket-shopping"></i><span class="cart-badge">0</span></a>
+            </div>
+        </div>
+    </header>
+
+    <nav class="mobile-nav">
+        <ul class="mobile-nav-list">
+            <li><a href="index.html" class="mobile-nav-item"><i class="fa-solid fa-house"></i> الرئيسية</a></li>
+            <li><a href="menu.html" class="mobile-nav-item"><i class="fa-solid fa-utensils"></i> المنيو</a></li>
+            <li><a href="cart.html" class="mobile-nav-item"><i class="fa-solid fa-basket-shopping"></i> السلة</a></li>
+            <li><a href="about.html" class="mobile-nav-item active"><i class="fa-solid fa-book-open"></i> قصتنا</a></li>
+        </ul>
+    </nav>
+
+    <div class="about-header">
+        <div class="container anim-fade">
+            <div class="hero-tag"><i class="fa-solid fa-fire-flame-curved"></i> تراث عريق</div>
+            <h1 class="about-title text-gradient">السر وراء فليمز</h1>
+            <p style="color: var(--text-muted); font-size:1.2rem; max-width: 600px; margin: 0 auto;">لم نكن نريد بناء مجرد مطعم، بل أردنا إرساء معيار جديد للرفاهية والجيب المتناول.</p>
+        </div>
+    </div>
+
+    <!-- The Journey Timeline -->
+    <section class="section" style="padding-top: 0;">
+        <div class="container">
+            <div class="section-header text-center anim-fade" style="text-align: center;">
+                <h2 class="section-title">رحلة التذوق</h2>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item anim-fade delay-1">
+                    <div class="timeline-content">
+                        <h3>2020: بداية الحلم</h3>
+                        <p>انطلقنا من مطبخ صغير بشغف واحد: إيجاد الوصفة المثالية لقطعة البرجر. قمنا بتجربة 100 وصفة مختلفة للخبز حتى وصلنا لخبز البريوش السري الخاص بنا المخبوز يدوياً.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item anim-fade delay-2">
+                    <div class="timeline-content">
+                        <h3>2022: إبرام الشراكات</h3>
+                        <p>أدركنا أن السر في اللحم. عقدنا اتفاقية حصرية مع أحد أفضل المزارع المحلية لضمان توريد لحوم الأنجوس الطازجة الخالية من الهرمونات يومياً لمطابخنا.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+
+                <div class="timeline-item anim-fade delay-3">
+                    <div class="timeline-content">
+                        <h3>2024: إطلاق فليمز الفاخر</h3>
+                        <p>تم افتتاح فرعنا الأول والمخصص بالكامل لتجارب الطعام رفيعة المستوى وتوصيله بحفظ الحرارة (VIP)، ليأتيك الطعام وكأنك جالس في المطعم.</p>
+                    </div>
+                    <div class="timeline-dot"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Chef & Quality Section -->
+    <section class="chef-section">
+        <div class="container">
+            <div class="grid-2">
+                <div class="anim-fade">
+                    <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?ixlib=rb-4.0.3&w=600&q=80" style="width: 100%; border-radius: var(--radius); box-shadow: var(--shadow-soft);" alt="Head Chef">
+                </div>
+                <div class="anim-fade delay-1">
+                    <div class="section-subtitle">إشراف عالمي</div>
+                    <h2 class="section-title">معايير خمس نجوم، في راحة منزلك.</h2>
+                    <p class="section-desc" style="margin-bottom: 20px;">الأساس لدينا هو الجاذبية في الطعم والشكل. يشرف على تحضير الوصفات واستلام اللحوم كبير طهاتنا الحاصل على جوائز في تحضير اللحوم المتقنة.</p>
+                    <p class="section-desc" style="margin-bottom: 30px;">نحن نرفض التنازل عن الجودة؛ نستخدم فقط لحوم بقرية مفرومة محلياً يومياً، ولا يتم تحضيرها أو تجميدها مسبقاً، بل تُطهى لحظة استلام طلبك.</p>
+                    
+                    <div class="grid-2" style="gap: 20px; margin-bottom: 40px;">
+                        <div>
+                            <h4 style="color:var(--primary); font-size:1.5rem; font-weight:900;">100%</h4>
+                            <p style="color:var(--text-muted); font-size:1rem;">مكونات طازجة غير مجمدة</p>
+                        </div>
+                        <div>
+                            <h4 style="color:var(--primary); font-size:1.5rem; font-weight:900;">صفر</h4>
+                            <p style="color:var(--text-muted); font-size:1rem;">مواد حافظة صناعية</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detailed Footer -->
+    <footer style="background: rgba(255,255,255,0.02); padding: 80px 0 40px; border-top: 1px solid var(--border);">
+        <div class="container">
+            <div class="grid-3" style="margin-bottom: 50px; text-align: right;">
+                <div>
+                    <h3 style="color:#fff; font-size:1.8rem; font-weight:900; margin-bottom:20px;"><i class="fa-solid fa-fire text-primary"></i> فليمز</h3>
+                    <p style="color:var(--text-muted); margin-bottom:20px;">نأخذك في رحلة تذوق لأشهى الوجبات المحضرة محلياً بعناية وشغف. الرفاهية في كل قضمة.</p>
+                    <div style="display:flex; gap:15px;">
+                        <a href="#" style="background:rgba(255,255,255,0.05); width:40px; height:40px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:0.3s;"><i class="fa-brands fa-instagram text-primary"></i></a>
+                        <a href="#" style="background:rgba(255,255,255,0.05); width:40px; height:40px; display:flex; align-items:center; justify-content:center; border-radius:50%; transition:0.3s;"><i class="fa-brands fa-twitter text-primary"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h3 style="color:#fff; font-size:1.2rem; font-weight:800; margin-bottom:20px;">الوصول السريع</h3>
+                    <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; color:var(--text-muted);">
+                        <li><a href="menu.html">القائمة الكاملة</a></li>
+                        <li><a href="cart.html">سلة المشتريات</a></li>
+                        <li><a href="login.html">حسابي</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color:#fff; font-size:1.2rem; font-weight:800; margin-bottom:20px;">ساعات العمل والاتصال</h3>
+                    <ul style="list-style:none; display:flex; flex-direction:column; gap:10px; color:var(--text-muted);">
+                        <li><i class="fa-solid fa-clock text-primary"></i> 11:00 صباحاً - 2:00 بعد منتصف الليل</li>
+                        <li><i class="fa-solid fa-phone text-primary"></i> 19000 (الخط الساخن)</li>
+                        <li><i class="fa-solid fa-envelope text-primary"></i> hello@flames.com</li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align: center; color: var(--text-muted); font-size: 0.9rem; padding-top: 30px; border-top: 1px solid rgba(255,255,255,0.05);">
+                <p>&copy; 2026 مطعم فليمز الفاخر. تصميم وبرمجة بأعلى المعايير.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
